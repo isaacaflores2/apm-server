@@ -3,8 +3,9 @@ kind: ApmServer
 metadata:
   name: apm-server
 spec:
-  # TODO: replace with a pinned version such as 9.0.0-aaaaaaaa-SNAPSHOT
-  version: 9.1.0-5859ff16-SNAPSHOT
+  # Replace with older version. Due to below error:
+  ## Build Failed: admission webhook "elastic-apm-validation-v1.k8s.elastic.co" denied the request: ApmServer.apm.k8s.elastic.co "apm-server" is invalid: spec.version: Invalid value: "9.1.0-5859ff16-SNAPSHOT": Unsupported version: version 9.1.0-5859ff16-SNAPSHOT is higher than the highest supported version of 8.99.99
+  version: 8.16.0-bff94f3c-SNAPSHOT
   count: 1
   http:
     tls:
