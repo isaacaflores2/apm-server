@@ -1,0 +1,878 @@
+[
+  {
+    "_index": ".ds-traces-apm-default-2025.06.17-000001",
+    "_id": "SbcOGpgBtZWt4zkGdc3p",
+    "_score": 1,
+    "_source": {
+      "parent": {
+        "id": "feabab44a0233185"
+      },
+      "agent": {
+        "name": "go",
+        "version": "2.7.1"
+      },
+      "process": {
+        "args": [
+          "go-elastic-agent"
+        ],
+        "parent": {
+          "pid": 71546
+        },
+        "pid": 71586,
+        "title": "go-elastic-agent"
+      },
+      "processor": {
+        "event": "span"
+      },
+      "observer": {
+        "hostname": "prod1.example.com",
+        "type": "apm-server",
+        "version": "9.2.0"
+      },
+      "trace": {
+        "id": "feabab44a0233185e1796fc2ce6b4fc7"
+      },
+      "@timestamp": "2025-07-17T20:23:21.063Z",
+      "data_stream": {
+        "namespace": "default",
+        "type": "traces",
+        "dataset": "apm"
+      },
+      "service": {
+        "node": {
+          "name": "prod1.example.com"
+        },
+        "name": "go-elastic-agent",
+        "runtime": {
+          "name": "gc",
+          "version": "go1.24.5"
+        },
+        "language": {
+          "name": "go",
+          "version": "go1.24.5"
+        }
+      },
+      "host": {
+        "hostname": "prod1.example.com",
+        "os": {
+          "platform": "darwin"
+        },
+        "ip": [
+          "127.0.0.1"
+        ],
+        "name": "prod1.example.com",
+        "architecture": "arm64"
+      },
+      "event": {
+        "success_count": 1,
+        "outcome": "success"
+      },
+      "transaction": {
+        "id": "feabab44a0233185"
+      },
+      "span": {
+        "duration": {
+          "us": 3
+        },
+        "representative_count": 1,
+        "subtype": "mysql",
+        "name": "SELECT FROM foo",
+        "action": "query",
+        "id": "86309b555bc2f237",
+        "type": "db"
+      },
+      "timestamp": {
+        "us": 1752783801063751
+      }
+    }
+  },
+  {
+    "_index": ".ds-traces-apm-default-2025.06.17-000001",
+    "_id": "SrcOGpgBtZWt4zkGdc3p",
+    "_score": 1,
+    "_source": {
+      "parent": {
+        "id": "feabab44a0233185"
+      },
+      "agent": {
+        "name": "go",
+        "version": "2.7.1"
+      },
+      "process": {
+        "args": [
+          "go-elastic-agent"
+        ],
+        "parent": {
+          "pid": 71546
+        },
+        "pid": 71586,
+        "title": "go-elastic-agent"
+      },
+      "processor": {
+        "event": "span"
+      },
+      "observer": {
+        "hostname": "prod1.example.com",
+        "type": "apm-server",
+        "version": "9.2.0"
+      },
+      "trace": {
+        "id": "feabab44a0233185e1796fc2ce6b4fc7"
+      },
+      "@timestamp": "2025-07-17T20:23:21.063Z",
+      "data_stream": {
+        "namespace": "default",
+        "type": "traces",
+        "dataset": "apm"
+      },
+      "service": {
+        "node": {
+          "name": "prod1.example.com"
+        },
+        "name": "go-elastic-agent",
+        "runtime": {
+          "name": "gc",
+          "version": "go1.24.5"
+        },
+        "language": {
+          "name": "go",
+          "version": "go1.24.5"
+        }
+      },
+      "host": {
+        "hostname": "prod1.example.com",
+        "os": {
+          "platform": "darwin"
+        },
+        "ip": [
+          "127.0.0.1"
+        ],
+        "name": "prod1.example.com",
+        "architecture": "arm64"
+      },
+      "event": {
+        "success_count": 1,
+        "outcome": "success"
+      },
+      "transaction": {
+        "id": "feabab44a0233185"
+      },
+      "span": {
+        "duration": {
+          "us": 0
+        },
+        "representative_count": 1,
+        "name": "GET /bar/baz",
+        "id": "5c9176b84e48e014",
+        "type": "request"
+      },
+      "timestamp": {
+        "us": 1752783801063760
+      }
+    }
+  },
+  {
+    "_index": ".ds-traces-apm-default-2025.06.17-000001",
+    "_id": "S7cOGpgBtZWt4zkGdc3p",
+    "_score": 1,
+    "_source": {
+      "agent": {
+        "name": "go",
+        "version": "2.7.1"
+      },
+      "process": {
+        "args": [
+          "go-elastic-agent"
+        ],
+        "parent": {
+          "pid": 71546
+        },
+        "pid": 71586,
+        "title": "go-elastic-agent"
+      },
+      "processor": {
+        "event": "transaction"
+      },
+      "labels": {
+        "method": "GET",
+        "region": "us-east-1",
+        "local": "test"
+      },
+      "observer": {
+        "hostname": "prod1.example.com",
+        "type": "apm-server",
+        "version": "9.2.0"
+      },
+      "trace": {
+        "id": "feabab44a0233185e1796fc2ce6b4fc7"
+      },
+      "@timestamp": "2025-07-17T20:23:21.063Z",
+      "data_stream": {
+        "namespace": "default",
+        "type": "traces",
+        "dataset": "apm"
+      },
+      "service": {
+        "node": {
+          "name": "prod1.example.com"
+        },
+        "name": "go-elastic-agent",
+        "runtime": {
+          "name": "gc",
+          "version": "go1.24.5"
+        },
+        "language": {
+          "name": "go",
+          "version": "go1.24.5"
+        }
+      },
+      "host": {
+        "hostname": "prod1.example.com",
+        "os": {
+          "platform": "darwin"
+        },
+        "ip": [
+          "127.0.0.1"
+        ],
+        "name": "prod1.example.com",
+        "architecture": "arm64"
+      },
+      "event": {
+        "success_count": 1,
+        "outcome": "success"
+      },
+      "transaction": {
+        "result": "HTTP 200exor",
+        "duration": {
+          "us": 28
+        },
+        "representative_count": 1,
+        "name": "GET /api/v1",
+        "id": "feabab44a0233185",
+        "span_count": {
+          "dropped": 0,
+          "started": 2
+        },
+        "type": "request",
+        "sampled": true
+      },
+      "span": {
+        "id": "feabab44a0233185"
+      },
+      "timestamp": {
+        "us": 1752783801063746
+      }
+    }
+  },
+  {
+    "_index": ".ds-traces-apm-default-2025.06.17-000001",
+    "_id": "GLcJGpgBtZWt4zkG8c3Z",
+    "_score": 1,
+    "_source": {
+      "parent": {
+        "id": "bd266412a8471473"
+      },
+      "agent": {
+        "name": "go",
+        "version": "2.7.1"
+      },
+      "process": {
+        "args": [
+          "go-elastic-agent"
+        ],
+        "parent": {
+          "pid": 71377
+        },
+        "pid": 71402,
+        "title": "go-elastic-agent"
+      },
+      "processor": {
+        "event": "span"
+      },
+      "observer": {
+        "hostname": "prod1.example.com",
+        "type": "apm-server",
+        "version": "9.2.0"
+      },
+      "trace": {
+        "id": "bd266412a8471473661077293d339270"
+      },
+      "@timestamp": "2025-07-17T20:18:24.903Z",
+      "data_stream": {
+        "namespace": "default",
+        "type": "traces",
+        "dataset": "apm"
+      },
+      "service": {
+        "node": {
+          "name": "prod1.example.com"
+        },
+        "name": "go-elastic-agent",
+        "runtime": {
+          "name": "gc",
+          "version": "go1.24.5"
+        },
+        "language": {
+          "name": "go",
+          "version": "go1.24.5"
+        }
+      },
+      "host": {
+        "hostname": "prod1.example.com",
+        "os": {
+          "platform": "darwin"
+        },
+        "ip": [
+          "127.0.0.1"
+        ],
+        "name": "prod1.example.com",
+        "architecture": "arm64"
+      },
+      "event": {
+        "success_count": 1,
+        "outcome": "success"
+      },
+      "transaction": {
+        "id": "bd266412a8471473"
+      },
+      "span": {
+        "duration": {
+          "us": 4
+        },
+        "representative_count": 1,
+        "subtype": "mysql",
+        "name": "SELECT FROM foo",
+        "action": "query",
+        "id": "c4fc98fbf08b75de",
+        "type": "db"
+      },
+      "timestamp": {
+        "us": 1752783504903763
+      }
+    }
+  },
+  {
+    "_index": ".ds-traces-apm-default-2025.06.17-000001",
+    "_id": "GbcJGpgBtZWt4zkG8c3a",
+    "_score": 1,
+    "_source": {
+      "parent": {
+        "id": "c4fc98fbf08b75de"
+      },
+      "agent": {
+        "name": "go",
+        "version": "2.7.1"
+      },
+      "process": {
+        "args": [
+          "go-elastic-agent"
+        ],
+        "parent": {
+          "pid": 71377
+        },
+        "pid": 71402,
+        "title": "go-elastic-agent"
+      },
+      "processor": {
+        "event": "span"
+      },
+      "observer": {
+        "hostname": "prod1.example.com",
+        "type": "apm-server",
+        "version": "9.2.0"
+      },
+      "trace": {
+        "id": "bd266412a8471473661077293d339270"
+      },
+      "@timestamp": "2025-07-17T20:18:24.903Z",
+      "data_stream": {
+        "namespace": "default",
+        "type": "traces",
+        "dataset": "apm"
+      },
+      "service": {
+        "node": {
+          "name": "prod1.example.com"
+        },
+        "name": "go-elastic-agent",
+        "runtime": {
+          "name": "gc",
+          "version": "go1.24.5"
+        },
+        "language": {
+          "name": "go",
+          "version": "go1.24.5"
+        }
+      },
+      "host": {
+        "hostname": "prod1.example.com",
+        "os": {
+          "platform": "darwin"
+        },
+        "ip": [
+          "127.0.0.1"
+        ],
+        "name": "prod1.example.com",
+        "architecture": "arm64"
+      },
+      "event": {
+        "success_count": 1,
+        "outcome": "success"
+      },
+      "transaction": {
+        "id": "bd266412a8471473"
+      },
+      "span": {
+        "duration": {
+          "us": 0
+        },
+        "representative_count": 1,
+        "name": "GET /bar/baz",
+        "id": "4067fec47e23174a",
+        "type": "request"
+      },
+      "timestamp": {
+        "us": 1752783504903772
+      }
+    }
+  },
+  {
+    "_index": ".ds-traces-apm-default-2025.06.17-000001",
+    "_id": "BrcIGpgBtZWt4zkG2c3J",
+    "_score": 1,
+    "_source": {
+      "parent": {
+        "id": "0b8064454d96d236"
+      },
+      "agent": {
+        "name": "go",
+        "version": "2.7.1"
+      },
+      "process": {
+        "args": [
+          "go-elastic-agent"
+        ],
+        "parent": {
+          "pid": 71295
+        },
+        "pid": 71332,
+        "title": "go-elastic-agent"
+      },
+      "processor": {
+        "event": "span"
+      },
+      "observer": {
+        "hostname": "prod1.example.com",
+        "type": "apm-server",
+        "version": "9.2.0"
+      },
+      "trace": {
+        "id": "0b8064454d96d2367037bef04a423eca"
+      },
+      "@timestamp": "2025-07-17T20:17:13.208Z",
+      "data_stream": {
+        "namespace": "default",
+        "type": "traces",
+        "dataset": "apm"
+      },
+      "service": {
+        "node": {
+          "name": "prod1.example.com"
+        },
+        "name": "go-elastic-agent",
+        "runtime": {
+          "name": "gc",
+          "version": "go1.24.5"
+        },
+        "language": {
+          "name": "go",
+          "version": "go1.24.5"
+        }
+      },
+      "host": {
+        "hostname": "prod1.example.com",
+        "os": {
+          "platform": "darwin"
+        },
+        "ip": [
+          "127.0.0.1"
+        ],
+        "name": "prod1.example.com",
+        "architecture": "arm64"
+      },
+      "event": {
+        "success_count": 1,
+        "outcome": "success"
+      },
+      "transaction": {
+        "id": "0b8064454d96d236"
+      },
+      "span": {
+        "duration": {
+          "us": 2
+        },
+        "representative_count": 1,
+        "subtype": "mysql",
+        "name": "SELECT FROM foo",
+        "action": "query",
+        "id": "31e5bbf2c8e997b7",
+        "type": "db"
+      },
+      "timestamp": {
+        "us": 1752783433208776
+      }
+    }
+  },
+  {
+    "_index": ".ds-traces-apm-default-2025.06.17-000001",
+    "_id": "B7cIGpgBtZWt4zkG2c3J",
+    "_score": 1,
+    "_source": {
+      "parent": {
+        "id": "31e5bbf2c8e997b7"
+      },
+      "agent": {
+        "name": "go",
+        "version": "2.7.1"
+      },
+      "process": {
+        "args": [
+          "go-elastic-agent"
+        ],
+        "parent": {
+          "pid": 71295
+        },
+        "pid": 71332,
+        "title": "go-elastic-agent"
+      },
+      "processor": {
+        "event": "span"
+      },
+      "observer": {
+        "hostname": "prod1.example.com",
+        "type": "apm-server",
+        "version": "9.2.0"
+      },
+      "trace": {
+        "id": "0b8064454d96d2367037bef04a423eca"
+      },
+      "@timestamp": "2025-07-17T20:17:13.208Z",
+      "data_stream": {
+        "namespace": "default",
+        "type": "traces",
+        "dataset": "apm"
+      },
+      "service": {
+        "node": {
+          "name": "prod1.example.com"
+        },
+        "name": "go-elastic-agent",
+        "runtime": {
+          "name": "gc",
+          "version": "go1.24.5"
+        },
+        "language": {
+          "name": "go",
+          "version": "go1.24.5"
+        }
+      },
+      "host": {
+        "hostname": "prod1.example.com",
+        "os": {
+          "platform": "darwin"
+        },
+        "ip": [
+          "127.0.0.1"
+        ],
+        "name": "prod1.example.com",
+        "architecture": "arm64"
+      },
+      "event": {
+        "success_count": 1,
+        "outcome": "success"
+      },
+      "transaction": {
+        "id": "0b8064454d96d236"
+      },
+      "span": {
+        "duration": {
+          "us": 0
+        },
+        "representative_count": 1,
+        "name": "GET /bar/baz",
+        "id": "7e7b2bfef1ae9eed",
+        "type": "request"
+      },
+      "timestamp": {
+        "us": 1752783433208781
+      }
+    }
+  },
+  {
+    "_index": ".ds-traces-apm-default-2025.06.17-000001",
+    "_id": "CLcIGpgBtZWt4zkG2c3J",
+    "_score": 1,
+    "_source": {
+      "agent": {
+        "name": "go",
+        "version": "2.7.1"
+      },
+      "process": {
+        "args": [
+          "go-elastic-agent"
+        ],
+        "parent": {
+          "pid": 71295
+        },
+        "pid": 71332,
+        "title": "go-elastic-agent"
+      },
+      "processor": {
+        "event": "transaction"
+      },
+      "labels": {
+        "method": "GET",
+        "region": "us-east-1",
+        "local": "test"
+      },
+      "observer": {
+        "hostname": "prod1.example.com",
+        "type": "apm-server",
+        "version": "9.2.0"
+      },
+      "trace": {
+        "id": "0b8064454d96d2367037bef04a423eca"
+      },
+      "@timestamp": "2025-07-17T20:17:13.208Z",
+      "data_stream": {
+        "namespace": "default",
+        "type": "traces",
+        "dataset": "apm"
+      },
+      "service": {
+        "node": {
+          "name": "prod1.example.com"
+        },
+        "name": "go-elastic-agent",
+        "runtime": {
+          "name": "gc",
+          "version": "go1.24.5"
+        },
+        "language": {
+          "name": "go",
+          "version": "go1.24.5"
+        }
+      },
+      "host": {
+        "hostname": "prod1.example.com",
+        "os": {
+          "platform": "darwin"
+        },
+        "ip": [
+          "127.0.0.1"
+        ],
+        "name": "prod1.example.com",
+        "architecture": "arm64"
+      },
+      "event": {
+        "success_count": 1,
+        "outcome": "success"
+      },
+      "transaction": {
+        "result": "HTTP 200exor",
+        "duration": {
+          "us": 20
+        },
+        "representative_count": 1,
+        "name": "GET /api/v1",
+        "id": "0b8064454d96d236",
+        "span_count": {
+          "dropped": 0,
+          "started": 2
+        },
+        "type": "request",
+        "sampled": true
+      },
+      "span": {
+        "id": "0b8064454d96d236"
+      },
+      "timestamp": {
+        "us": 1752783433208773
+      }
+    }
+  },
+  {
+    "_index": ".ds-traces-apm-default-2025.06.17-000001",
+    "_id": "krf7GZgBtZWt4zkGQsyT",
+    "_score": 1,
+    "_source": {
+      "parent": {
+        "id": "1c95e26a659d1376"
+      },
+      "agent": {
+        "name": "go",
+        "version": "2.7.1"
+      },
+      "process": {
+        "args": [
+          "/go-elastic-agent"
+        ],
+        "parent": {
+          "pid": 70215
+        },
+        "pid": 70241,
+        "title": "go-elastic-agent"
+      },
+      "processor": {
+        "event": "span"
+      },
+      "observer": {
+        "hostname": "prod1.example.com",
+        "type": "apm-server",
+        "version": "9.2.0"
+      },
+      "trace": {
+        "id": "1c95e26a659d1376964f7d876ea504db"
+      },
+      "@timestamp": "2025-07-17T20:02:22.527Z",
+      "data_stream": {
+        "namespace": "default",
+        "type": "traces",
+        "dataset": "apm"
+      },
+      "service": {
+        "node": {
+          "name": "prod1.example.com"
+        },
+        "name": "go-elastic-agent",
+        "runtime": {
+          "name": "gc",
+          "version": "go1.24.5"
+        },
+        "language": {
+          "name": "go",
+          "version": "go1.24.5"
+        }
+      },
+      "host": {
+        "hostname": "prod1.example.com",
+        "os": {
+          "platform": "darwin"
+        },
+        "ip": [
+          "127.0.0.1"
+        ],
+        "name": "prod1.example.com",
+        "architecture": "arm64"
+      },
+      "event": {
+        "success_count": 1,
+        "outcome": "success"
+      },
+      "transaction": {
+        "id": "1c95e26a659d1376"
+      },
+      "span": {
+        "duration": {
+          "us": 2
+        },
+        "representative_count": 1,
+        "subtype": "mysql",
+        "name": "SELECT FROM foo",
+        "action": "query",
+        "id": "2cc1c2dd93d489d5",
+        "type": "db"
+      },
+      "timestamp": {
+        "us": 1752782542527313
+      }
+    }
+  },
+  {
+    "_index": ".ds-traces-apm-default-2025.06.17-000001",
+    "_id": "arf4GZgBtZWt4zkGAMwx",
+    "_score": 1,
+    "_source": {
+      "parent": {
+        "id": "52ec966309936270"
+      },
+      "agent": {
+        "name": "go",
+        "version": "2.7.1"
+      },
+      "process": {
+        "args": [
+          "go-elastic-agent"
+        ],
+        "parent": {
+          "pid": 70072
+        },
+        "pid": 70097,
+        "title": "go-elastic-agent"
+      },
+      "processor": {
+        "event": "span"
+      },
+      "observer": {
+        "hostname": "prod1.example.com",
+        "type": "apm-server",
+        "version": "9.2.0"
+      },
+      "trace": {
+        "id": "52ec96630993627093136132c83c8fd0"
+      },
+      "@timestamp": "2025-07-17T19:58:48.926Z",
+      "data_stream": {
+        "namespace": "default",
+        "type": "traces",
+        "dataset": "apm"
+      },
+      "service": {
+        "node": {
+          "name": "prod1.example.com"
+        },
+        "name": "go-elastic-agent",
+        "runtime": {
+          "name": "gc",
+          "version": "go1.24.5"
+        },
+        "language": {
+          "name": "go",
+          "version": "go1.24.5"
+        }
+      },
+      "host": {
+        "hostname": "prod1.example.com",
+        "os": {
+          "platform": "darwin"
+        },
+        "ip": [
+          "127.0.0.1"
+        ],
+        "name": "prod1.example.com",
+        "architecture": "arm64"
+      },
+      "event": {
+        "success_count": 1,
+        "outcome": "success"
+      },
+      "transaction": {
+        "id": "52ec966309936270"
+      },
+      "span": {
+        "duration": {
+          "us": 2
+        },
+        "representative_count": 1,
+        "subtype": "mysql",
+        "name": "SELECT FROM foo",
+        "action": "query",
+        "id": "0d71bc9f353df462",
+        "type": "db"
+      },
+      "timestamp": {
+        "us": 1752782328926809
+      }
+    }
+  }
+]
