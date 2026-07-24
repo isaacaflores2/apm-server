@@ -7,7 +7,7 @@ terraform {
     }
     aws = {
       source  = "hashicorp/aws"
-      version = "~>4.17"
+      version = "~>6"
     }
     time = {
       source  = "hashicorp/time"
@@ -26,7 +26,12 @@ locals {
     build        = var.BUILD_ID
     created_date = coalesce(var.CREATED_DATE, time_static.created_date.unix)
   }
-  project = "apm-server-benchmarks"
+  project   = "apm-server-benchmarks"
+  ec_target = lower(var.ec_target)
+  api_endpoints = {
+    qa  = "https://public-api.qa.cld.elstc.co"
+    pro = "https://api.elastic-cloud.com"
+  }
 }
 
 module "tags" {
@@ -36,7 +41,9 @@ module "tags" {
   project = startswith(var.user_name, "benchci") ? local.project : "${local.project}-${var.user_name}"
 }
 
-provider "ec" {}
+provider "ec" {
+  endpoint = local.api_endpoints[local.ec_target]
+}
 
 provider "aws" {
   region = var.worker_region
@@ -44,11 +51,15 @@ provider "aws" {
 
 locals {
   name_prefix = "${coalesce(var.user_name, "unknown-user")}-bench"
+
+  # Detect if standalone APM server instance type is ARM (Graviton) based
+  # If we need to change this, remember to grep for other instance type checks in the codebase.
+  standalone_apm_is_arm = can(regex("^(a1|t4g|c6g|c7g|m6g|m7g|r6g|r7g|x2gd)", var.standalone_apm_server_instance_size))
 }
 
 module "vpc" {
   source  = "terraform-aws-modules/vpc/aws"
-  version = "3.14.0"
+  version = "6.5.1"
 
   name = "${var.user_name}-worker"
   cidr = var.vpc_cidr
@@ -88,6 +99,7 @@ module "ec_deployment" {
   count  = var.run_standalone ? 0 : 1
   source = "../infra/terraform/modules/ec_deployment"
 
+  ec_target     = var.ec_target
   region        = var.ess_region
   stack_version = var.stack_version
 
@@ -153,8 +165,9 @@ module "standalone_apm_server" {
   count  = var.run_standalone ? 1 : 0
   source = "../infra/terraform/modules/standalone_apm_server"
 
-  vpc_id              = module.vpc.vpc_id
-  aws_os              = "al2023-ami-2023.*-x86_64"
+  vpc_id = module.vpc.vpc_id
+  # Use appropriate AMI pattern based on instance architecture
+  aws_os              = local.standalone_apm_is_arm ? "al2023-ami-2023" : "al2023-ami-2023.*-x86_64"
   apm_instance_type   = var.standalone_apm_server_instance_size
   apm_volume_type     = var.standalone_apm_server_volume_type
   apm_volume_size     = var.apm_server_tail_sampling ? coalesce(var.standalone_apm_server_volume_size, 60) : var.standalone_apm_server_volume_size

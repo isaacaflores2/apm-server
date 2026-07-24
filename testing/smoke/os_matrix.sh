@@ -8,11 +8,12 @@ os_names=(
     "al2023-ami-2023"
     "RHEL-8"
     "RHEL-9"
-    "Rocky-8-EC2-Base"
+    # "Rocky-8-EC2-Base" # See https://github.com/elastic/apm-server/issues/21179
     "Rocky-9-EC2-Base"
     "AlmaLinux OS 8"
     "AlmaLinux OS 9"
-    "OL8"
-    "OL9"
+    ## Oracle Linux removed for now since they are not available on AMIs.
+    # "OL8"
+    # "OL9"
 )
 

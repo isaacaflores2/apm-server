@@ -4,13 +4,13 @@ We expect no more minor versions in the `8.x` line after 8.19, but only patch re
 
 ## 8.17 patch releases
 
-Run the `run-patch-release` with any `8.17.x` version.
+Run the `run-patch-release` with the new `8.17.x` patch version.
 
 **NOTE**: This automation does not handle the changelog, which should be manually handled.
 
 ## 8.18 patch releases
 
-Run the `run-patch-release` with any `8.18.x` version.
+Run the `run-patch-release` with the new `8.18.x` patch version.
 
 **NOTE**: This automation does not handle the changelog, which should be manually handled.
 
@@ -41,7 +41,7 @@ Refer to `release.mk` and the `minor-release` target for further details.
 
 ## 8.19 patch releases
 
-Run the `run-patch-release` with any `8.19.x` version.
+Run the `run-patch-release` with the new `8.19.x` patch version.
 
 **NOTE**: This automation does not handle the changelog, which should be manually handled.
 
@@ -54,12 +54,14 @@ Run the `run-patch-release` with any `8.19.x` version.
 
 ## Day after Feature Freeze
 
-* Trigger release workflow manually
-  * For **patch releases**: run the [`run-patch-release`](https://github.com/elastic/apm-server/actions/workflows/run-patch-release.yml) workflow. In "Use workflow from", specify the following values:
+* Trigger release automation
+  * For **minor releases**, automated version bumps are usually done on Feature Freeze day.
+  * For **patch releases**, this is usually triggered by [unified-release-centralized-version-bump](https://buildkite.com/elastic/unified-release-centralized-version-bump), which calls [apm-server-version-bump](https://buildkite.com/elastic/apm-server-version-bump), and then triggers [`run-patch-release`](https://github.com/elastic/apm-server/actions/workflows/run-patch-release.yml) with the new version on release day.
+  * If needed, you can still run `run-patch-release` manually. In "Use workflow from", specify the following values:
        * Branch: Select the relevant `8.x` branch - e.g: `8.14` for `8.14.x` patch releases.
-       * Version: Specify the **upcoming** patch release version - e.g: on `8.14.2` feature freeze you will use `8.14.2`.
+       * Version: Specify the **new** patch release version - e.g: if versions should be bumped to `8.14.2`, use `8.14.2`.
    
-    This workflow will: create the `update-<VERSION>` branch, update version constants across the codebase and create a PR targeting the release branch.
+    This workflow will: create the `update-<VERSION>` branch for the provided version, update version constants across the codebase and create a PR targeting the release branch.
     
     Release notes for patch releases **must be manually added** at least one day before release.
     Create a PR targeting the relevant `8.x` branch.
@@ -92,7 +94,11 @@ Run the `run-patch-release` with any `8.19.x` version.
 
 * Test plan
 
-  Create a github issue for testing the release branch ([use the GitHub issue `test plan` template](https://github.com/elastic/apm-server/issues/new?assignees=&labels=test-plan&projects=&template=test-plan.md)), It should contain:
+  Create a GitHub issue for testing the release branch.
+  Choose one way to create the initial issue:
+  * **Option 1 (recommended):** Run the [`create-test-plan`](https://github.com/elastic/apm-server/actions/workflows/create-test-plan.yml) workflow with the upcoming patch or minor version, then review and adjust the generated issue content.
+  * **Option 2:** Create it manually using the [test plan issue template](https://github.com/elastic/apm-server/issues/new?assignees=&labels=test-plan&projects=&template=test-plan.md).
+  The issue should contain:
   * A link to all PRs in the APM Server repository that need to be tested manually to create an overview over the PRs that need testing.
     Use the `test-plan` label and the version label (create it if it does not exist). For example, [this was 8.13.0 test plan](https://github.com/elastic/apm-server/issues/12822)
     and here you can find [all previous test plans](https://github.com/elastic/apm-server/issues?q=label%3Atest-plan+is%3Aclosed).
